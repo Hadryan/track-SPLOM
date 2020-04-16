@@ -1,7 +1,7 @@
 #! venv/bin/python
 
 from flask import Flask, render_template, jsonify
-from get_tracks import get_data
+from track_data import get_tracks
 
 USERNAME = 'dtaylor072'
 
@@ -13,7 +13,7 @@ def index():
 
 @app.route('/data')
 def data():
-    data = get_data(USERNAME)
+    data = get_tracks(USERNAME)
     return jsonify(data)
 
 if __name__ == '__main__':
